@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import BasicCard from "../../components/common/BasicCard/BasicCard";
 import CommonButton from "../../components/common/CommonButton/CommonButton";
@@ -9,8 +9,11 @@ import GridWrapper from "../../components/common/GridWrapper/GridWrapper";
 import SearchBar from "../../components/common/SearchBar/SearchBar";
 import RefreshIcon from "@mui/icons-material/Refresh";
 import { cardHeaderStyles } from "./styles";
+import BasicModal from "../../components/common/BasicModal/BasicModal";
 
 const Authentication = () => {
+	const [open, setOpen] = useState(false);
+
 	const getHeader = () => {
 		const handleChange = (value) => {
 			console.log(value);
@@ -18,6 +21,7 @@ const Authentication = () => {
 
 		const addUser = () => {
 			console.log("click");
+			setOpen(true);
 		};
 
 		return (
@@ -36,6 +40,7 @@ const Authentication = () => {
 					>
 						Add user
 					</CommonButton>
+
 					<IconButton>
 						<RefreshIcon />
 					</IconButton>
@@ -60,6 +65,8 @@ const Authentication = () => {
 	return (
 		<GridWrapper>
 			<BasicCard header={getHeader()} content={getContent()} />
+
+			<BasicModal open={open} onClose={() => setOpen(false)} />
 		</GridWrapper>
 	);
 };

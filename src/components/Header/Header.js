@@ -65,7 +65,6 @@ const Header = ({ title }) => {
 			<Box sx={headerStyles.middleRow}>
 				<Typography variant="h1" color="white">
 					{title}
-					{/* Authentication */}
 				</Typography>
 
 				<Box>

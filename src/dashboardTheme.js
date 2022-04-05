@@ -1,8 +1,5 @@
 import { createTheme } from "@mui/material/styles";
-/* 
 
-21.30
-*/
 export const dashboardTheme = createTheme({
 	components: {
 		MuiButton: {

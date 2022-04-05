@@ -12,7 +12,7 @@ import Functions from "./pages/Functions/Functions";
 import Database from "./pages/Database/Database";
 import Storage from "./pages/Storage/Storage";
 
-import { ThemeProvider, createTheme } from "@mui/material/styles";
+import { ThemeProvider } from "@mui/material/styles";
 import { dashboardTheme } from "./dashboardTheme";
 
 ReactDOM.render(

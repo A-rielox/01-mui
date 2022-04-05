@@ -1,11 +1,14 @@
 import React from "react";
-import Grid from "@mui/material/Grid";
+
 import BasicCard from "../../components/common/BasicCard/BasicCard";
 import CommonButton from "../../components/common/CommonButton/CommonButton";
 import IconButton from "@mui/material/IconButton";
-
+import Typography from "@mui/material/Typography";
+import Box from "@mui/material/Box";
+import GridWrapper from "../../components/common/GridWrapper/GridWrapper";
 import SearchBar from "../../components/common/SearchBar/SearchBar";
 import RefreshIcon from "@mui/icons-material/Refresh";
+import { cardHeaderStyles } from "./styles";
 
 const Authentication = () => {
 	const getHeader = () => {
@@ -13,29 +16,73 @@ const Authentication = () => {
 			console.log(value);
 		};
 
-		return (
-			<div>
-				<SearchBar
-					placeholder="Search by email address, phone number, ou user ID"
-					onChange={(e) => handleChange(e.target.value)}
-				/>
+		const addUser = () => {
+			console.log("click");
+		};
 
-				{/* <CommonButton /> */}
-				<IconButton>
-					<RefreshIcon />
-				</IconButton>
-			</div>
+		return (
+			<Box sx={cardHeaderStyles.wrapper}>
+				<SearchBar
+					placeholder="Search by email address, phone number, or user UID"
+					onChange={(event) => handleChange(event.target.value)}
+					searchBarWidth="720px"
+				/>
+				<Box>
+					<CommonButton
+						variant="contained"
+						onClick={addUser}
+						size="large"
+						sx={cardHeaderStyles.addUserButton}
+					>
+						Add user
+					</CommonButton>
+					<IconButton>
+						<RefreshIcon />
+					</IconButton>
+				</Box>
+			</Box>
 		);
 	};
 
+	const getContent = () => (
+		<Typography
+			align="center"
+			sx={{
+				margin: "40px 16px",
+				color: "rgba(0, 0, 0, 0.6)",
+				fontSize: "1.3rem",
+			}}
+		>
+			No users for this project yet
+		</Typography>
+	);
+
 	return (
-		<Grid item xs={8} sx={{ marginLeft: "320px" }}>
-			<BasicCard header={getHeader()} />
-		</Grid>
+		<GridWrapper>
+			<BasicCard header={getHeader()} content={getContent()} />
+		</GridWrapper>
 	);
 };
 
 export default Authentication;
+
+/* 
+const cardHeaderStyles = {
+			wrapper: {
+				display: "flex",
+				alignItems: "center",
+				justifyContent: "space-between",
+				paddingLeft: "20px",
+				paddingRight: "20px",
+				height: "65px",
+				backgroundColor: "#f5f5f5",
+				borderBottom: "1px solid rgba(0, 0, 0, 0.12)",
+			},
+			addUserButton: {
+				fontSize: "1.05rem",
+			},
+		};
+*/
 
 /*  LO PASÉ AL GLOBAL-STYLE
 

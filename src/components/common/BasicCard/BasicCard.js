@@ -1,14 +1,13 @@
 import React from "react";
 
 import Card from "@mui/material/Card";
-import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 
-import SearchIcon from "@mui/icons-material/Search";
+import { cardStyles } from "./styles";
 
 const BasicCard = ({ header, content }) => {
 	return (
-		<Card>
+		<Card sx={cardStyles}>
 			{header}
 			<CardContent>{content}</CardContent>
 		</Card>
@@ -16,6 +15,14 @@ const BasicCard = ({ header, content }) => {
 };
 
 export default BasicCard;
+
+// export const cardStyles = {
+//    width: '1050px',
+//    position: 'absolute',
+//    left: '50%',
+//    transform: 'translateX(-50%)',
+//    borderRadius: '8px',
+// };
 
 /* 
 

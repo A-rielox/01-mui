@@ -9,7 +9,7 @@ import GridWrapper from "../../components/common/GridWrapper/GridWrapper";
 import SearchBar from "../../components/common/SearchBar/SearchBar";
 import RefreshIcon from "@mui/icons-material/Refresh";
 import { cardHeaderStyles } from "./styles";
-import BasicModal from "../../components/common/BasicModal/BasicModal";
+import NewUserModal from "../../components/Modals/NewUserModal/NewUserModal";
 
 const Authentication = () => {
 	const [open, setOpen] = useState(false);
@@ -66,7 +66,7 @@ const Authentication = () => {
 		<GridWrapper>
 			<BasicCard header={getHeader()} content={getContent()} />
 
-			<BasicModal open={open} onClose={() => setOpen(false)} />
+			<NewUserModal open={open} onClose={() => setOpen(false)} />
 		</GridWrapper>
 	);
 };

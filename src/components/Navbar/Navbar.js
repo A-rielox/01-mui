@@ -10,7 +10,7 @@ import ListItemText from "@mui/material/ListItemText";
 
 import { mainNavbarItems } from "../consts/navbarItems";
 import { navbarStyles } from "./styles";
-import { useParams, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
 	const navigate = useNavigate();
@@ -18,7 +18,9 @@ const Navbar = () => {
 	return (
 		<Drawer sx={navbarStyles.drawer} variant="permanent" anchor="left">
 			<Toolbar />
+
 			<Divider />
+
 			<List>
 				{mainNavbarItems.map((item, index) => (
 					<ListItem

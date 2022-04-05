@@ -1,8 +1,38 @@
 import React from "react";
 import Grid from "@mui/material/Grid";
+import BasicCard from "../../components/common/BasicCard/BasicCard";
+import CommonButton from "../../components/common/CommonButton/CommonButton";
+import IconButton from "@mui/material/IconButton";
+
+import SearchBar from "../../components/common/SearchBar/SearchBar";
+import RefreshIcon from "@mui/icons-material/Refresh";
 
 const Authentication = () => {
-	return <Grid item xs={8}></Grid>;
+	const getHeader = () => {
+		const handleChange = (value) => {
+			console.log(value);
+		};
+
+		return (
+			<div>
+				<SearchBar
+					placeholder="Search by email address, phone number, ou user ID"
+					onChange={(e) => handleChange(e.target.value)}
+				/>
+
+				{/* <CommonButton /> */}
+				<IconButton>
+					<RefreshIcon />
+				</IconButton>
+			</div>
+		);
+	};
+
+	return (
+		<Grid item xs={8} sx={{ marginLeft: "320px" }}>
+			<BasicCard header={getHeader()} />
+		</Grid>
+	);
 };
 
 export default Authentication;

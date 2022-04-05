@@ -21,6 +21,7 @@ const NotificationBell = ({ iconColor /* , badgeContent */ }) => {
 		setOpen(false);
 	};
 	// ----- fin basic menu
+
 	const notifications = [
 		{
 			id: 0,

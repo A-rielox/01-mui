@@ -53,7 +53,6 @@ const NewUserModal = ({ open, onClose, addNewUser }) => {
 
 	const addUser = (data) => {
 		addNewUser(data);
-		console.log("click");
 	};
 
 	const handleChange = (value) => {

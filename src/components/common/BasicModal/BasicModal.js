@@ -7,9 +7,9 @@ import { modalStyles } from "./styles";
 import CommonButton from "../CommonButton/CommonButton";
 /* 
 
-10.20
+23.28
 */
-const BasicModal = ({ open, onClose, title, subTitle, content, validate }) => {
+const BasicModal = ({ open, onClose, title, subTitle, content, onSubmit }) => {
 	return (
 		<Modal open={open} onClose={onClose}>
 			<Box sx={modalStyles.wrapper}>
@@ -17,23 +17,24 @@ const BasicModal = ({ open, onClose, title, subTitle, content, validate }) => {
 					{/* New user */}
 					{title}
 				</Typography>
-
 				<Typography sx={{ mt: 2 }}>
 					{/* Fill out inputs and hit "submit" button. */}
 					{subTitle}
 				</Typography>
 
 				{content}
-				{/* los reemplazo con el content 
+
+				{/* los reemplazo con el content
+
 				<Box sx={modalStyles.inputFields}>
 					<Input placeholder="E-mail" />
 					<Input placeholder="Phone number" />
-					<Input placeholder="User id" /> 
+					<Input placeholder="User id" />
 				</Box>
-					*/}
-
+				
+				*/}
 				<Box sx={modalStyles.buttons}>
-					<CommonButton variant="contained" onClick={validate}>
+					<CommonButton variant="contained" onClick={onSubmit}>
 						Submit
 					</CommonButton>
 

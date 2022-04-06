@@ -11,6 +11,12 @@ import RefreshIcon from "@mui/icons-material/Refresh";
 import { cardHeaderStyles } from "./styles";
 import NewUserModal from "../../components/Modals/NewUserModal/NewUserModal";
 
+/* 
+npm install react-hook-form
+npm i yup
+npm i @hookform/resolvers
+*/
+
 const Authentication = () => {
 	const [open, setOpen] = useState(false);
 
@@ -20,7 +26,6 @@ const Authentication = () => {
 		};
 
 		const addUser = () => {
-			console.log("click");
 			setOpen(true);
 		};
 
@@ -49,6 +54,12 @@ const Authentication = () => {
 		);
 	};
 
+	const addNewUser = (data) => {
+		console.log(data);
+		// users.push({ ...data });
+		// setOpen(false);
+	};
+
 	const getContent = () => (
 		<Typography
 			align="center"
@@ -66,7 +77,11 @@ const Authentication = () => {
 		<GridWrapper>
 			<BasicCard header={getHeader()} content={getContent()} />
 
-			<NewUserModal open={open} onClose={() => setOpen(false)} />
+			<NewUserModal
+				open={open}
+				onClose={() => setOpen(false)}
+				addNewUser={addNewUser}
+			/>
 		</GridWrapper>
 	);
 };
